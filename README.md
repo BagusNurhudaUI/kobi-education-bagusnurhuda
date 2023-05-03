@@ -17,3 +17,7 @@ npm start
 
 # API Endpoint : http://127.0.0.1:8080 OR customable port
 ```
+
+## Entity Relational Doagram
+
+![](2023-05-04-00-26-58.png)
