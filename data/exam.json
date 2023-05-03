@@ -1,0 +1,10 @@
+[
+    {
+        "title": "Listening Tip",
+        "description": "Lorem Ipsum dolor sit amet, consectetur adipiscing elit",
+        "duration": 20,
+        "code" : "code1",
+        "photo_url" : "https://kobieducation.com/wp-content/uploads/2023/01/KOBI-main-logo_main-768x380.png",
+        "audio_url" : "www.music.com/music.mp3"
+    }
+]

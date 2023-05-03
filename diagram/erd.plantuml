@@ -1,0 +1,92 @@
+@startuml
+' hide the spot
+' hide circle
+
+' avoid problems with angled crows feet
+' skinparam linetype ortho
+
+
+class "user" {
+  id_user : integer <<PK>>
+  --
+  role : role <<ENUM>>
+  email : string
+  password : string
+  name : string
+  phone : string
+  photo_url : string
+}
+
+class "exam" {
+    id_exam : integer <<PK>>
+    ' id_admin : integer <<FK>>
+    title : string
+    description : string
+    duration : string
+    code : string
+    photo_url : string
+    audio_url : string
+}
+
+class question {
+    id_question : integer <<PK>>
+    id_exam : integer <<FK>>
+    --
+    no_question : integer
+    type : ENUM(choices,filltheblanks, essayimages, essay )
+    question_text : string 
+    photo_url : string
+    audio_url : string
+    answer : string
+    option_a : string
+    option_b : string
+    option_c : string
+    option_d : string
+}
+
+class take_exam {
+    id_take_exam : integer <<PK>>
+    id_user : integer <<FK>>
+    id_exam : integer <<FK>>
+    --
+    status : ENUM(ongoing, pending, finished)
+    score : float
+    finishedAt : datetime 
+    takeCount : int
+}
+
+class take_answer {
+    id_take_answer : integer <<PK>>
+    id_take_exam : integer <<FK>>
+    id_question : integer <<FK>>
+    -- 
+    answer_text : string
+    nilai : int 
+}
+
+enum "role" {
+    admin 
+    student
+}
+
+
+
+exam ||--|{ question
+user ||--|{ take_exam
+exam ||--|{ take_exam
+take_exam ||--|{ take_answer
+question ||--|{ take_answer
+
+' pelanggan ||--|{ user
+' pelanggan ||--|{ asset
+' user ||--|{ laporan
+' asset ||--|{ laporan
+' laporan ||--|{ dokumentasi
+' jenis_dokumnetasi ||--|{ dokumentasi
+' laporan ||--|{ temuan
+' jenis_temuan ||--|{ temuan
+
+
+
+
+@enduml
