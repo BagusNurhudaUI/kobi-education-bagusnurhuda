@@ -6,7 +6,7 @@ _Property of Kobi education interview test_
 
 ```bash
 # Download this project
-git clone https://github.com/BagusNurhudaUI/dagangan-bagus-nurhuda.git
+git clone https://github.com/BagusNurhudaUI/kobi-education-bagusnurhuda.git
 ```
 
 ```bash
